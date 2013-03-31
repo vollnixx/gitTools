@@ -20,7 +20,7 @@ if [ -n "`which locate`" ];then
 		 empty=`git status -s`
 		 #echo "$temp"
 		if [ -n "$empty" ]; then
-		 echo -e "!!! $temp => not commited files "
+		 echo -e "!!! $temp => not committed files "
 		 let NOTCOMMITTED++
 		 #not committed files in this repository, do what you want here
 		else
