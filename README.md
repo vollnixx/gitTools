@@ -7,11 +7,11 @@ If the script is not executable type into your shell:
 
     chmod u+x checkGitDirs
     
-If newer repositories are not listed you should first refresh your file database whith the following:
+If newer repositories are not listed you should first refresh your file database with the following:
 
     sudo updatedb
     
-The you can just execute the script with:
+Then you can just execute the script with:
 
     ./checkGitDirs
 
