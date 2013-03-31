@@ -2,7 +2,7 @@
 #this script automaticly locates all git repositories on the local pc and updates them
 txtgrn='\e[0;32m\033[1m ' # Green bold
 txtora='\e[0;31m\033[1m ' # Orange bold
-txtrst='\e[0m'   		  # Text Reset
+txtrst='\e[0m'            # Text Reset
 if [ -n "`which locate`" ];then
 	echo "========================BEGIN CHECK==============================="
 	IGNORE="/usr/local|/var/www";#insert dirs to ignore, like this DIR1|DIR2|DIR3
