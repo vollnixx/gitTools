@@ -1,12 +1,12 @@
 #!/bin/bash
-#this script automaticly locates all git repositories and updates them
+#this script automaticly locates all git repositories on the local pc and updates them
 txtgrn='\e[0;32m\033[1m ' # Green bold
 txtora='\e[0;31m\033[1m ' # Orange bold
 txtrst='\e[0m'   		  # Text Reset
 if [ -n "`which locate`" ];then
 	echo "========================BEGIN CHECK==============================="
 	IGNORE="/usr/local|/var/www";#insert dirs to ignore, like this DIR1|DIR2|DIR3
-	GETDIRS=`locate ".git/index" | grep -vE $IGNORE` #get all dirs on the current machine with a git repository
+	GETDIRS=`locate ".git/index" | grep -vE $IGNORE` #get all dirs on the local pc with a git repository
 
 	#counters
 	COMMITTED=0
@@ -22,10 +22,10 @@ if [ -n "`which locate`" ];then
 		if [ -n "$empty" ]; then
 		 echo -e "!!! $temp => not commited files "
 		 let NOTCOMMITTED++
-		 #do what you want here
+		 #not committed files in this repository, do what you want here
 		else
 		 let COMMITTED++
-		 #do what you want here
+		 #all files in this repository are committed, do what you want here
 		fi
 		let ALL++
 	done
