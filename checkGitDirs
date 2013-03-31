@@ -6,7 +6,7 @@ txtrst='\e[0m'            # Text Reset
 if [ -n "`which locate`" ];then
 	echo "========================BEGIN CHECK==============================="
 	IGNORE="/usr/local|/var/www";#insert dirs to ignore, like this DIR1|DIR2|DIR3
-	GETDIRS=`locate ".git/index" | grep -vE $IGNORE` #get all dirs on the local pc with a git repository
+	GETDIRS=`locate ".git/index" | grep -vE "$IGNORE"` #get all dirs on the local pc with a git repository
 
 	#counters
 	COMMITTED=0
