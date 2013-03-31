@@ -1,6 +1,6 @@
 # checkGitDirs
 * checkGitDirs is a simple bash script which checks the local git repositories for uncommitted files
-* ignore function for git repositories which should not be listed
+* ignore function for git repositories which should not be listed/checked
 
 To run the script you must have installed **git** and **locate**.
 If the script is not executable type into your shell:
