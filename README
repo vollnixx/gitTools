@@ -1,5 +1,3 @@
-<h1>checkGitDirs</h1>
-	<ul>
-		<li>checkGitDirs is a simple bash script which checks the local git repositories for uncomitted files</li>
-		<li>ignore function for git repositories which should not be listed</li>
-	</ul> 
+checkGitDirs
+	checkGitDirs is a simple bash script which checks the local git repositories for uncomitted files
+	ignore function for git repositories which should not be listed
