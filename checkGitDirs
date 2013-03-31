@@ -1,0 +1,43 @@
+#!/bin/bash
+#this script automaticly locates all git repositories and updates them
+txtgrn='\e[0;32m\033[1m ' # Green bold
+txtora='\e[0;31m\033[1m ' # Orange bold
+txtrst='\e[0m'   		  # Text Reset
+if [ -n "`which locate`" ];then
+	echo "========================BEGIN CHECK==============================="
+	IGNORE="/usr/local|/var/www";#insert dirs to ignore, like this DIR1|DIR2|DIR3
+	GETDIRS=`locate ".git/index" | grep -vE $IGNORE` #get all dirs on the current machine with a git repository
+
+	#counters
+	COMMITTED=0
+	NOTCOMMITTED=0
+	ALL=0
+
+	for i in $(echo "$GETDIRS"  )
+	do
+		 temp=${i/.git\/index/} 
+		 cd "$temp"
+		 empty=`git status -s`
+		 #echo "$temp"
+		if [ -n "$empty" ]; then
+		 echo -e "!!! $temp => not commited files "
+		 let NOTCOMMITTED++
+		 #do what you want here
+		else
+		 let COMMITTED++
+		 #do what you want here
+		fi
+		let ALL++
+	done
+
+	if [ $NOTCOMMITTED == 0 ];then
+		end="$txtgrn✔$txtrst"
+	else
+		end="$txtora✘$txtrst"
+	fi
+	echo "------------------------------------------------------------------"
+	echo -e "\t $ALL dirs total, committed $COMMITTED, not committed $NOTCOMMITTED $end"
+	echo "========================CHECK DONE================================"
+else
+	echo -e "$txtora Please install locate. \n$txtrst"
+fi
