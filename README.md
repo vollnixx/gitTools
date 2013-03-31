@@ -4,7 +4,8 @@
 
 To run the script you must have installed git and locate.
 If the script is not executable type into your shell:
-	chmod u+x checkGitDirs
-
+    chmod u+x checkGitDirs
 If newer repositories are not listed you should first refresh your file database whith the following:
-	sudo updatedb
+    sudo updatedb
+The you can just execute the script with:
+    ./checkGitDirs
