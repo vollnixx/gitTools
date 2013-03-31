@@ -1,5 +1,6 @@
 #!/bin/bash
 #this script automaticly locates all git repositories on the local pc and updates them
+IGNORE="/usr/local|/var/www";#insert dirs to ignore, like this DIR1|DIR2|DIR3
 txtgrn='\e[0;32m\033[1m ' # Green bold
 txtora='\e[0;31m\033[1m ' # Orange bold
 txtrst='\e[0m'            # Text Reset
@@ -20,9 +21,7 @@ list=0;
 
 if [ -n "`which locate`" ];then
 	echo "========================BEGIN CHECK==============================="
-	IGNORE="/usr/local|/var/www";#insert dirs to ignore, like this DIR1|DIR2|DIR3
 	GETDIRS=`locate ".git/index" | grep -vE "$IGNORE"` #get all dirs on the local pc with a git repository
-
 	#counters
 	COMMITTED=0
 	NOTCOMMITTED=0
