@@ -14,3 +14,6 @@ If newer repositories are not listed you should first refresh your file database
 The you can just execute the script with:
 
     ./checkGitDirs
+
+By default the directories */usr/local* and */var/www* if you have directories in ther which you want to be checked remove/change the entries from line 8 of the script:
+    IGNORE="/usr/local|/var/www";
