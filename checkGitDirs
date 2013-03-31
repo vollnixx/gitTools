@@ -13,7 +13,7 @@ if [ -n "`which locate`" ];then
 	NOTCOMMITTED=0
 	ALL=0
 
-	for i in $(echo "$GETDIRS"  )
+	for i in $(echo "$GETDIRS" )
 	do
 		 temp=${i/.git\/index/} 
 		 cd "$temp"
