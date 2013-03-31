@@ -18,7 +18,6 @@ if [ -n "`which locate`" ];then
 		 temp=${i/.git\/index/} 
 		 cd "$temp"
 		 empty=`git status -s`
-		 #echo "$temp"
 		if [ -n "$empty" ]; then
 		 echo -e "!!! $temp => not committed files "
 		 let NOTCOMMITTED++
