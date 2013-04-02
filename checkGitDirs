@@ -21,7 +21,7 @@ list=0;
 
 if [ -n "`which locate`" ];then
 	echo "========================BEGIN CHECK==============================="
-	GETDIRS=`locate ".git/index" | grep -vE "$IGNORE"` #get all dirs on the local pc with a git repository
+	GETDIRS=`locate ".git/index" | grep -vE "$IGNORE"` #get all local git repositoriers
 	#counters
 	COMMITTED=0
 	NOTCOMMITTED=0
